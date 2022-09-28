@@ -2,7 +2,6 @@ package org.bang.ap.first.app.firstapp.lesson
 
 import androidx.collection.arrayMapOf
 
-
 /**
  * // kotlin集合
  * List：是一个有序列表，可通过索引（下标）访问元素。元素可以在list中出现多次、元素可重复。

@@ -3,7 +3,6 @@ package org.bang.ap.first.app.firstapp.lesson
 import com.google.gson.Gson
 import org.json.JSONObject
 
-
 // kotlin泛型
 fun main() {
     // 1. 泛型接口

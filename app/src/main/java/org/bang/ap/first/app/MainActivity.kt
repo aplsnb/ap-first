@@ -1,6 +1,8 @@
 package org.bang.ap.first.app
 
+import android.app.Activity
 import android.os.Bundle
+import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -31,5 +33,18 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        println("where is me ?")
+
+        R.id.text_home.onClick(this) {
+            println("text_home onClick")
+        }
+    }
+}
+
+fun Int.onClick(activity: Activity, click: () -> Unit) {
+    activity.findViewById<View>(this).setOnClickListener {
+        println("onClick")
+        click()
     }
 }
