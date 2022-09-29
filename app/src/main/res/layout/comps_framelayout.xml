@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:text="layout_gravity:center"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="layout_gravity:center"
+        android:backgroundTint="@color/purple_700"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="layout_gravity:center"
+        android:backgroundTint="@color/teal_700"
+        android:layout_gravity="center" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="layout_gravity:center"
+        android:backgroundTint="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginLeft="100dp" />
+</FrameLayout>
