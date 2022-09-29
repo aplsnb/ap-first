@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    style="@style/Widget.MaterialComponents.Button.UnelevatedButton" 去除阴影效果，让显示更加扁平化-->
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="圆角"
+        android:textSize="18dp"
+        android:textColor="#ff0000"
+        app:cornerRadius="30dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="描边"
+        android:textSize="18dp"
+        android:textColor="#ff0000"
+        app:cornerRadius="30dp"
+        app:strokeColor="#ff0000"
+        app:strokeWidth="3dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="图标"
+        android:textSize="18dp"
+        android:textColor="#ff0000"
+        app:cornerRadius="30dp"
+        app:strokeColor="#ff0000"
+        app:strokeWidth="3dp"
+        app:icon="@android:drawable/star_on"
+        app:iconTint="#ff0000"
+        app:iconGravity="textStart" />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggle_group"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        app:checkedButton="@id/btn1"
+        app:singleSelection="true"
+        app:selectionRequired="false">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:id="@+id/btn1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="tab1"
+            app:cornerRadius="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:id="@+id/btn2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="tab2"
+            app:cornerRadius="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:id="@+id/btn3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="tab3"
+            app:cornerRadius="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:id="@+id/btn4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:text="tab4"
+            app:cornerRadius="15dp" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+</LinearLayout>
