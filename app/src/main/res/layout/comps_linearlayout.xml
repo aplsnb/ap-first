@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 线性布局 -->
+    <!-- android:orientation="vertical" 在垂直方向依次排开-->
+    <!--    match_parent 和父容器一样-->
+    <!--    wrap_content 根据自己的内容决定-->
+    <!--    android:gravity="center_horizontal" 使得子view在水平方向居中显示-->
+    <!--    android:gravity="center_vertical" 使得子view在垂直方向居中显示-->
+    <!--    android:gravity="center" 使得子view在水平垂直方向居中显示-->
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="2"
+        android:backgroundTint="#ff0000"
+        android:layout_gravity="center_vertical" />
+
+    <!--    android:layout_gravity="center_vertical" 如果对齐方式和orientation方向一致，则会失效-->
+    <!--    android:layout_weight="1" 按照比例分配父容器-->
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:backgroundTint="#00ff00"
+        android:layout_gravity="center_vertical" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+        android:backgroundTint="#0000ff"
+        android:layout_gravity="center_vertical" />
+</LinearLayout>
