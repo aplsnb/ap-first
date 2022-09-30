@@ -4,39 +4,86 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import org.bang.ap.first.app.databinding.FragmentHomeBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.item_view_linear_vertical.view.*
+import org.bang.ap.first.app.R
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private var _binding: FragmentHomeBinding? = null
+//    private var _binding: FragmentHomeBinding? = null
+//
+//    // This property is only valid between onCreateView and
+//    // onDestroyView.
+//    private val binding get() = _binding!!
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View {
+//        val homeViewModel =
+//            ViewModelProvider(this).get(HomeViewModel::class.java)
+//
+//        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+//        val root: View = binding.root
+//
+//        val textView: TextView = binding.textHome
+//        homeViewModel.text.observe(viewLifecycleOwner) {
+//            textView.text = it
+//        }
+//        return root
+//    }
+//
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        recycler_view.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recycler_view.adapter = MyAdapter()
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+    inner class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+//            val itemView = LayoutInflater.from(context)
+//                .inflate(R.layout.item_view_linear_vertical, parent, false)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+            val itemView = LayoutInflater.from(context)
+                .inflate(R.layout.item_view_linear_horizontal, parent, false)
+            return MyViewHolder(itemView)
         }
-        return root
+
+        override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+            holder.itemView.item_image.setImageResource(R.drawable.img_1908)
+
+//            holder.itemView.item_image.setImageDrawable(
+//                ContextCompat.getDrawable(
+//                    context!!,
+//                    R.drawable.img_1908
+//                )
+//            )
+//
+//            holder.itemView.item_image.setImageBitmap(
+//                BitmapFactory.decodeResource(
+//                    context!!.resources,
+//                    R.drawable.img_1908
+//                )
+//            )
+
+            holder.itemView.item_title.text = " 【$position】移动端架构师体系课"
+            holder.itemView.item_message.text = "移动开发'两极分化'，没有差不多的'中间层'，唯有尽早成长为架构师，你的职业道路才能走的更远更稳"
+        }
+
+        override fun getItemCount(): Int {
+            return 20
+        }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }

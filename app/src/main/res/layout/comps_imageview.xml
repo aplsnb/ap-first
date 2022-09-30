@@ -31,7 +31,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="fitCenter"
                 android:alpha="0.6" />
@@ -59,7 +59,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="centerCrop" />
         </LinearLayout>
@@ -86,7 +86,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="centerInside" />
         </LinearLayout>
@@ -120,7 +120,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="fitStart" />
         </LinearLayout>
@@ -147,7 +147,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="fitEnd" />
         </LinearLayout>
@@ -174,7 +174,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="fitXY" />
         </LinearLayout>
@@ -208,7 +208,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="matrix" />
         </LinearLayout>
@@ -235,7 +235,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/IMG_1908"
+                android:src="@drawable/img_1908"
                 android:background="#ff0000"
                 android:scaleType="center" />
         </LinearLayout>
