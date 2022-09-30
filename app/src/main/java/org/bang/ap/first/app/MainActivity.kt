@@ -6,6 +6,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.bang.ap.first.app.databinding.ActivityMainBinding
+import org.bang.ap.first.app.http.ApOkHttp
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,9 @@ class MainActivity : AppCompatActivity() {
 //        toggleGroup.addOnButtonCheckedListener { _, _, _ ->
 //            Log.e("MainActivity", "isChecked")
 //        }
+
+//        ApOkHttp.get()
+        ApOkHttp.getAsync()
     }
 }
 
