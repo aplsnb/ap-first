@@ -44,7 +44,11 @@ class MainActivity : AppCompatActivity() {
 //        }
 
 //        ApOkHttp.get()
-        ApOkHttp.getAsync()
+//        ApOkHttp.getAsync()
+//        ApOkHttp.post()
+//        ApOkHttp.postAsync()
+//        ApOkHttp.postAsyncMultipart(this)
+        ApOkHttp.postAsyncString()
     }
 }
 
