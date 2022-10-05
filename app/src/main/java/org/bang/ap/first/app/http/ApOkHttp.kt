@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.logging.HttpLoggingInterceptor
 import okio.IOException
 import org.json.JSONObject
 import java.io.File
@@ -14,11 +15,18 @@ import java.util.concurrent.TimeUnit
 object ApOkHttp {
     private const val BASE_URL = "http://123.56.232.18:8080/serverdemo"
 
-    private val client = OkHttpClient.Builder() // builder构造者设计模式
-        .connectTimeout(10, TimeUnit.SECONDS) // 连接超时时间
-        .readTimeout(10, TimeUnit.SECONDS) // 读取超时
-        .writeTimeout(10, TimeUnit.SECONDS) // 写超时，也就是请求超时
-        .build()
+    private val client: OkHttpClient
+
+    init {
+        val httpLoggingInterceptor = HttpLoggingInterceptor()
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        client = OkHttpClient.Builder() // builder构造者设计模式
+            .connectTimeout(10, TimeUnit.SECONDS) // 连接超时时间
+            .readTimeout(10, TimeUnit.SECONDS) // 读取超时
+            .writeTimeout(10, TimeUnit.SECONDS) // 写超时，也就是请求超时
+            .addInterceptor(httpLoggingInterceptor)
+            .build()
+    }
 
     // android分为主线程和子线程
     // 主线程就是app一启动后，android framework层会启动一个线程，主线程（ui线程）
