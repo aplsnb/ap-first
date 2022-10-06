@@ -6,7 +6,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.bang.ap.first.app.databinding.ActivityMainBinding
-import org.bang.ap.first.app.http.ApOkHttp
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 //        println("where is me ?")
-//
+
 //        R.id.text_home.onClick(this) {
 //            println("text_home onClick")
 //        }
@@ -48,7 +47,19 @@ class MainActivity : AppCompatActivity() {
 //        ApOkHttp.post()
 //        ApOkHttp.postAsync()
 //        ApOkHttp.postAsyncMultipart(this)
-        ApOkHttp.postAsyncString()
+//        ApOkHttp.postAsyncString()
+
+//        // onFailure和onResponse的回调都是在主线程的
+//        val apiService = ApRetrofit.create(ApiService::class.java)
+//        apiService.queryUser("1600932269").enqueue(object : Callback<String> {
+//            override fun onResponse(call: Call<String>, response: Response<String>) {
+//                Log.e("Retrofit", "queryUser onResponse: ${response.body() ?: "response is null"}")
+//            }
+//
+//            override fun onFailure(call: Call<String>, t: Throwable) {
+//                Log.e("Retrofit", "queryUser onFailure: ${t.message ?: "unknown reason"}")
+//            }
+//        })
     }
 }
 
