@@ -53,11 +53,11 @@ class MainActivity : AppCompatActivity() {
 //        val apiService = ApRetrofit.create(ApiService::class.java)
 //        apiService.queryUser("1600932269").enqueue(object : Callback<String> {
 //            override fun onResponse(call: Call<String>, response: Response<String>) {
-//                Log.e("Retrofit", "queryUser onResponse: ${response.body() ?: "response is null"}")
+//                Log.e("queryUser", "queryUser onResponse: ${response.body() ?: "response is null"}")
 //            }
 //
 //            override fun onFailure(call: Call<String>, t: Throwable) {
-//                Log.e("Retrofit", "queryUser onFailure: ${t.message ?: "unknown reason"}")
+//                Log.e("queryUser", "queryUser onFailure: ${t.message ?: "unknown reason"}")
 //            }
 //        })
     }

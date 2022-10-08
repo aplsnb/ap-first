@@ -164,6 +164,36 @@
             android:text="我的专栏"
             android:textSize="14dp"
             android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tab_add_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="#666666"
+            android:text="增加课程"
+            android:textSize="14dp"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tab_delete_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="#666666"
+            android:text="删除课程"
+            android:textSize="14dp"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/tab_update_course"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textColor="#666666"
+            android:text="更新课程"
+            android:textSize="14dp"
+            android:layout_marginLeft="16dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

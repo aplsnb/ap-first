@@ -11,6 +11,8 @@ import java.util.concurrent.TimeUnit
 object ApRetrofit {
     private const val BASE_URL = "http://123.56.232.18:8080/serverdemo/"
 
+    private const val BASE_URL2 = "https://www.songyubao.com/"
+
     private val client = OkHttpClient.Builder() // builder构造者设计模式
         .connectTimeout(10, TimeUnit.SECONDS) // 连接超时时间
         .readTimeout(10, TimeUnit.SECONDS) // 读取超时
@@ -20,7 +22,7 @@ object ApRetrofit {
 
     private val retrofit = Retrofit.Builder()
         .client(client)
-        .baseUrl(BASE_URL)
+        .baseUrl(BASE_URL2)
         .addConverterFactory(GsonConverterFactory.create()) // 数据转换适配器
         .build()
 
@@ -40,7 +42,7 @@ interface ApiService {
 
     // 多个参数的情况下可以使用@QueryMap，但只能用在GET请求上
     @GET("user/query")
-    fun queryUser3(@QueryMap params: MutableMap<String, String>): Call<String>
+    fun queryUser3(@QueryMap params: Map<String, String>): Call<String>
 
     /**
      * 很多情况下，我们需要上传json格式的数据。当我们注册新用户的时候，因为用户注册时数据相对较多
@@ -57,7 +59,7 @@ interface ApiService {
      * */
     @POST
     @FormUrlEncoded
-    fun executePost(@FieldMap map: MutableMap<String, Any>): Call<String>
+    fun executePost(@FieldMap map: Map<String, Any>): Call<String>
 
     /**
      * 表单上传文件（键值对提交、同时上传文件）
@@ -66,8 +68,18 @@ interface ApiService {
     @Multipart
     fun register(
         @Field(value = "openId", encoded = true) openId: String,
-        @PartMap map: MutableMap<String, MultipartBody.Part>
+        @PartMap map: Map<String, MultipartBody.Part>
     ): Call<String>
+
+    @GET("static/book/assets/study.json")
+    fun getStudy(): Call<List<Course>>
 }
 
 class News
+
+data class Course(
+    val label: String,
+    val poster: String,
+    var progress: String,
+    val title: String
+)
