@@ -1,25 +1,29 @@
 package org.bang.ap.first.app
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.view.Gravity
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.bang.ap.first.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var textView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        val navView: BottomNavigationView = binding.navView
+//
+//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
 //        // Passing each menu ID as a set of Ids because each
 //        // menu should be considered as top level destinations.
 //        val appBarConfiguration = AppBarConfiguration(
@@ -28,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 //            )
 //        )
 //        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+//        navView.setupWithNavController(navController)
 
 //        println("where is me ?")
 
@@ -60,6 +64,86 @@ class MainActivity : AppCompatActivity() {
 //                Log.e("queryUser", "queryUser onFailure: ${t.message ?: "unknown reason"}")
 //            }
 //        })
+
+        Log.e("MainActivity", "onCreate")
+
+        textView = TextView(this)
+        textView.text = "MainActivity"
+        textView.gravity = Gravity.CENTER
+        textView.setOnClickListener {
+//            // 显式intent
+//            val intent = Intent(this, SecondActivity::class.java)
+//            intent.putExtra("extra_data", "extra_data")
+//            intent.putExtra("extra_int_data", 100)
+//            startActivityForResult(intent, 200)
+
+//            // 隐式intent
+//            val intent = Intent()
+//            intent.action = "org.bang.ap.first.app.SECONDACTIVITY"
+//            intent.addCategory("org.bang.ap.first.app.category.SECONDACTIVITY")
+//            intent.putExtra("extra_data", "extra_data")
+//            intent.putExtra("extra_int_data", 100)
+//            startActivityForResult(intent, 200)
+
+//            // 给10086打电话
+//            val uri = Uri.parse("tel:10086")
+//            val intent = Intent(Intent.ACTION_DIAL, uri)
+//            startActivity(intent)
+
+            // 给10086发短信
+            val uri = Uri.parse("smsto:10086")
+            val intent = Intent(Intent.ACTION_SENDTO, uri)
+            intent.putExtra("sms_body", "Hello")
+            startActivity(intent)
+        }
+        setContentView(textView)
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        Log.e("MainActivity", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.e("MainActivity", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        Log.e("MainActivity", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        Log.e("MainActivity", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.e("MainActivity", "onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+
+        Log.e("MainActivity", "onRestart")
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 200 && resultCode == Activity.RESULT_OK && data != null) {
+            val stringExtraResult = data.getStringExtra("result_extra_string")
+            val intExtraResult = data.getIntExtra("result_extra_int", 0)
+
+            textView.text = "MainActivity.${stringExtraResult}.${intExtraResult}"
+        }
     }
 }
 
