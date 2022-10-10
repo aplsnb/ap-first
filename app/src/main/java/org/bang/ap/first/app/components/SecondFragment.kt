@@ -39,11 +39,15 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val intValue = arguments?.getInt("int_extra")
-        val stringValue = arguments?.getString("string_extra")
+//        val intValue = arguments?.getInt("int_extra")
+//        val stringValue = arguments?.getString("string_extra")
+//
+//        val textView = view as TextView
+//        textView.text = "${intValue}.${stringValue}"
 
         val textView = view as TextView
-        textView.text = "${intValue}.${stringValue}"
+        val tab = arguments?.getString("tab")
+        textView.text = "$tab"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -92,5 +96,14 @@ class SecondFragment : Fragment() {
         super.onDetach()
 
         Log.e("SecondFragment", "onDetach")
+    }
+
+    override fun onHiddenChanged(hidden: Boolean) {
+        super.onHiddenChanged(hidden)
+
+        // 当且仅当activity存在多个fragment，并且我们调用了show-hide
+        // hidden: 当前fragment不可见的时候，true，ft.show
+        // hidden: 当前fragment可见的时候，false，ft.hide
+        Log.e("SecondFragment", "onHiddenChanged: ${arguments?.getString("tab")}" + ".${hidden}")
     }
 }
