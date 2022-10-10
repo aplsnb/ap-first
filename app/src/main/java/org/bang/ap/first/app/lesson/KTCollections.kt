@@ -1,4 +1,4 @@
-package org.bang.ap.first.app.firstapp.lesson
+package org.bang.ap.first.app.lesson
 
 import com.google.gson.Gson
 
