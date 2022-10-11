@@ -1,6 +1,7 @@
 package org.bang.ap.first.app.components
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -48,6 +49,11 @@ class SecondFragment : Fragment() {
         val textView = view as TextView
         val tab = arguments?.getString("tab")
         textView.text = "$tab"
+
+        textView.setOnClickListener {
+            val intent = Intent(context, TestServiceActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

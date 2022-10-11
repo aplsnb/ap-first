@@ -51,5 +51,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity android:name=".components.TestServiceActivity" />
+
+        <service android:name=".components.TestService1"></service>
     </application>
 </manifest>
