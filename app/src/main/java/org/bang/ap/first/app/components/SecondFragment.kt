@@ -51,7 +51,10 @@ class SecondFragment : Fragment() {
         textView.text = "$tab"
 
         textView.setOnClickListener {
-            val intent = Intent(context, TestServiceActivity::class.java)
+//            val intent = Intent(context, TestServiceActivity::class.java)
+
+            val intent = Intent(context, TestBroadcastReceiverActivity::class.java)
+
             startActivity(intent)
         }
     }

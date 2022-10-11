@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 写存储卡 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 读存储卡 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 为了解决android8.0及以上不允许后台启动service服务 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -55,8 +56,18 @@
 
         <activity android:name=".components.TestServiceActivity" />
 
+        <activity android:name=".components.TestBroadcastReceiverActivity" />
+
         <service android:name=".components.TestService1" />
 
         <service android:name=".components.TestService2" />
+
+        <!--        <receiver-->
+        <!--            android:name=".components.TestBroadcastReceiver"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="org.bang.ap.first.app.components.TEST_BROADCAST_RECEIVER" />-->
+        <!--            </intent-filter>-->
+        <!--        </receiver>-->
     </application>
 </manifest>
